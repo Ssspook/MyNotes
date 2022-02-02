@@ -8,12 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		305CE7F627A547C200023E85 /* MyNotesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305CE7F527A547C200023E85 /* MyNotesApp.swift */; };
-		305CE7F827A547C200023E85 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305CE7F727A547C200023E85 /* ContentView.swift */; };
+		305CE7F827A547C200023E85 /* NotesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305CE7F727A547C200023E85 /* NotesListView.swift */; };
 		305CE7FA27A547C300023E85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 305CE7F927A547C300023E85 /* Assets.xcassets */; };
 		305CE7FD27A547C300023E85 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 305CE7FC27A547C300023E85 /* Preview Assets.xcassets */; };
 		305CE80727A547C300023E85 /* MyNotesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305CE80627A547C300023E85 /* MyNotesTests.swift */; };
 		305CE81127A547C300023E85 /* MyNotesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305CE81027A547C300023E85 /* MyNotesUITests.swift */; };
 		305CE81327A547C300023E85 /* MyNotesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305CE81227A547C300023E85 /* MyNotesUITestsLaunchTests.swift */; };
+		305CE82227A54B8700023E85 /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305CE82127A54B8700023E85 /* NoteView.swift */; };
+		305CE82527A5533100023E85 /* NoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305CE82427A5533100023E85 /* NoteViewModel.swift */; };
+		305CE82A27A55C2700023E85 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305CE82927A55C2700023E85 /* Constants.swift */; };
+		305CE83327A56D0300023E85 /* NoteEditingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305CE83227A56D0300023E85 /* NoteEditingView.swift */; };
+		305CE83627A579DD00023E85 /* CreateNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305CE83527A579DD00023E85 /* CreateNoteView.swift */; };
+		305CE83D27A81D4900023E85 /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305CE83C27A81D4900023E85 /* ColorPickerView.swift */; };
+		305CE84027A82D9700023E85 /* MyNotes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 305CE83E27A82D9700023E85 /* MyNotes.xcdatamodeld */; };
+		305CE84227A82DFD00023E85 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305CE84127A82DFD00023E85 /* DataController.swift */; };
+		305CE84527A966A500023E85 /* Color+hexInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305CE84427A966A500023E85 /* Color+hexInit.swift */; };
+		305CE84827A9737700023E85 /* UIColor+rgba.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305CE84727A9737700023E85 /* UIColor+rgba.swift */; };
+		305CE84A27A980DC00023E85 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305CE84927A980DC00023E85 /* CoreDataService.swift */; };
+		305CE84C27A9831B00023E85 /* NoteProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305CE84B27A9831B00023E85 /* NoteProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +48,7 @@
 /* Begin PBXFileReference section */
 		305CE7F227A547C200023E85 /* MyNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		305CE7F527A547C200023E85 /* MyNotesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNotesApp.swift; sourceTree = "<group>"; };
-		305CE7F727A547C200023E85 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		305CE7F727A547C200023E85 /* NotesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesListView.swift; sourceTree = "<group>"; };
 		305CE7F927A547C300023E85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		305CE7FC27A547C300023E85 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		305CE80227A547C300023E85 /* MyNotesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyNotesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +56,18 @@
 		305CE80C27A547C300023E85 /* MyNotesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyNotesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		305CE81027A547C300023E85 /* MyNotesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNotesUITests.swift; sourceTree = "<group>"; };
 		305CE81227A547C300023E85 /* MyNotesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNotesUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		305CE82127A54B8700023E85 /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
+		305CE82427A5533100023E85 /* NoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewModel.swift; sourceTree = "<group>"; };
+		305CE82927A55C2700023E85 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		305CE83227A56D0300023E85 /* NoteEditingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEditingView.swift; sourceTree = "<group>"; };
+		305CE83527A579DD00023E85 /* CreateNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteView.swift; sourceTree = "<group>"; };
+		305CE83C27A81D4900023E85 /* ColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerView.swift; sourceTree = "<group>"; };
+		305CE83F27A82D9700023E85 /* MyNotes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyNotes.xcdatamodel; sourceTree = "<group>"; };
+		305CE84127A82DFD00023E85 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		305CE84427A966A500023E85 /* Color+hexInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+hexInit.swift"; sourceTree = "<group>"; };
+		305CE84727A9737700023E85 /* UIColor+rgba.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+rgba.swift"; sourceTree = "<group>"; };
+		305CE84927A980DC00023E85 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
+		305CE84B27A9831B00023E85 /* NoteProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteProperties.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,9 +118,11 @@
 		305CE7F427A547C200023E85 /* MyNotes */ = {
 			isa = PBXGroup;
 			children = (
-				305CE7F527A547C200023E85 /* MyNotesApp.swift */,
-				305CE7F727A547C200023E85 /* ContentView.swift */,
-				305CE7F927A547C300023E85 /* Assets.xcassets */,
+				305CE84327A8329500023E85 /* Data Access Layer */,
+				305CE82827A55C1900023E85 /* Common */,
+				305CE82327A5531700023E85 /* Business Logic Layer */,
+				305CE82027A548E300023E85 /* App */,
+				305CE81F27A548D400023E85 /* Presentation Layer */,
 				305CE7FB27A547C300023E85 /* Preview Content */,
 			);
 			path = MyNotes;
@@ -125,6 +151,72 @@
 				305CE81227A547C300023E85 /* MyNotesUITestsLaunchTests.swift */,
 			);
 			path = MyNotesUITests;
+			sourceTree = "<group>";
+		};
+		305CE81F27A548D400023E85 /* Presentation Layer */ = {
+			isa = PBXGroup;
+			children = (
+				305CE84627A966BE00023E85 /* Extensions */,
+				305CE7F727A547C200023E85 /* NotesListView.swift */,
+				305CE82127A54B8700023E85 /* NoteView.swift */,
+				305CE83227A56D0300023E85 /* NoteEditingView.swift */,
+				305CE83527A579DD00023E85 /* CreateNoteView.swift */,
+				305CE83C27A81D4900023E85 /* ColorPickerView.swift */,
+			);
+			path = "Presentation Layer";
+			sourceTree = "<group>";
+		};
+		305CE82027A548E300023E85 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				305CE7F527A547C200023E85 /* MyNotesApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		305CE82327A5531700023E85 /* Business Logic Layer */ = {
+			isa = PBXGroup;
+			children = (
+				305CE84927A980DC00023E85 /* CoreDataService.swift */,
+				305CE84D27A9899B00023E85 /* View Models */,
+			);
+			path = "Business Logic Layer";
+			sourceTree = "<group>";
+		};
+		305CE82827A55C1900023E85 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				305CE7F927A547C300023E85 /* Assets.xcassets */,
+				305CE82927A55C2700023E85 /* Constants.swift */,
+				305CE84B27A9831B00023E85 /* NoteProperties.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		305CE84327A8329500023E85 /* Data Access Layer */ = {
+			isa = PBXGroup;
+			children = (
+				305CE83E27A82D9700023E85 /* MyNotes.xcdatamodeld */,
+				305CE84127A82DFD00023E85 /* DataController.swift */,
+			);
+			path = "Data Access Layer";
+			sourceTree = "<group>";
+		};
+		305CE84627A966BE00023E85 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				305CE84427A966A500023E85 /* Color+hexInit.swift */,
+				305CE84727A9737700023E85 /* UIColor+rgba.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		305CE84D27A9899B00023E85 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				305CE82427A5533100023E85 /* NoteViewModel.swift */,
+			);
+			path = "View Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +349,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				305CE7F827A547C200023E85 /* ContentView.swift in Sources */,
+				305CE82A27A55C2700023E85 /* Constants.swift in Sources */,
+				305CE84227A82DFD00023E85 /* DataController.swift in Sources */,
+				305CE82527A5533100023E85 /* NoteViewModel.swift in Sources */,
+				305CE84C27A9831B00023E85 /* NoteProperties.swift in Sources */,
+				305CE83627A579DD00023E85 /* CreateNoteView.swift in Sources */,
+				305CE83D27A81D4900023E85 /* ColorPickerView.swift in Sources */,
+				305CE84527A966A500023E85 /* Color+hexInit.swift in Sources */,
+				305CE84027A82D9700023E85 /* MyNotes.xcdatamodeld in Sources */,
+				305CE7F827A547C200023E85 /* NotesListView.swift in Sources */,
 				305CE7F627A547C200023E85 /* MyNotesApp.swift in Sources */,
+				305CE84A27A980DC00023E85 /* CoreDataService.swift in Sources */,
+				305CE83327A56D0300023E85 /* NoteEditingView.swift in Sources */,
+				305CE82227A54B8700023E85 /* NoteView.swift in Sources */,
+				305CE84827A9737700023E85 /* UIColor+rgba.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -585,6 +689,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		305CE83E27A82D9700023E85 /* MyNotes.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				305CE83F27A82D9700023E85 /* MyNotes.xcdatamodel */,
+			);
+			currentVersion = 305CE83F27A82D9700023E85 /* MyNotes.xcdatamodel */;
+			path = MyNotes.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 305CE7EA27A547C200023E85 /* Project object */;
 }
