@@ -15,17 +15,18 @@
 		305CE81127A547C300023E85 /* MyNotesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305CE81027A547C300023E85 /* MyNotesUITests.swift */; };
 		305CE81327A547C300023E85 /* MyNotesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305CE81227A547C300023E85 /* MyNotesUITestsLaunchTests.swift */; };
 		305CE82227A54B8700023E85 /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305CE82127A54B8700023E85 /* NoteView.swift */; };
-		305CE82527A5533100023E85 /* NoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305CE82427A5533100023E85 /* NoteViewModel.swift */; };
 		305CE82A27A55C2700023E85 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305CE82927A55C2700023E85 /* Constants.swift */; };
 		305CE83327A56D0300023E85 /* NoteEditingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305CE83227A56D0300023E85 /* NoteEditingView.swift */; };
 		305CE83627A579DD00023E85 /* CreateNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305CE83527A579DD00023E85 /* CreateNoteView.swift */; };
 		305CE83D27A81D4900023E85 /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305CE83C27A81D4900023E85 /* ColorPickerView.swift */; };
 		305CE84027A82D9700023E85 /* MyNotes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 305CE83E27A82D9700023E85 /* MyNotes.xcdatamodeld */; };
-		305CE84227A82DFD00023E85 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305CE84127A82DFD00023E85 /* DataController.swift */; };
 		305CE84527A966A500023E85 /* Color+hexInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305CE84427A966A500023E85 /* Color+hexInit.swift */; };
 		305CE84827A9737700023E85 /* UIColor+rgba.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305CE84727A9737700023E85 /* UIColor+rgba.swift */; };
-		305CE84A27A980DC00023E85 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305CE84927A980DC00023E85 /* CoreDataService.swift */; };
 		305CE84C27A9831B00023E85 /* NoteProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305CE84B27A9831B00023E85 /* NoteProperties.swift */; };
+		3073014527AC40E50040E082 /* UIColor+toHexString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3073014427AC40E50040E082 /* UIColor+toHexString.swift */; };
+		3073014727AC41D00040E082 /* Date+fromString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3073014627AC41D00040E082 /* Date+fromString.swift */; };
+		3073014927AC48CE0040E082 /* Note+viewModelLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3073014827AC48CE0040E082 /* Note+viewModelLogic.swift */; };
+		3073014B27AC52190040E082 /* PersistentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3073014A27AC52190040E082 /* PersistentController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,17 +58,18 @@
 		305CE81027A547C300023E85 /* MyNotesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNotesUITests.swift; sourceTree = "<group>"; };
 		305CE81227A547C300023E85 /* MyNotesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNotesUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		305CE82127A54B8700023E85 /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
-		305CE82427A5533100023E85 /* NoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewModel.swift; sourceTree = "<group>"; };
 		305CE82927A55C2700023E85 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		305CE83227A56D0300023E85 /* NoteEditingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEditingView.swift; sourceTree = "<group>"; };
 		305CE83527A579DD00023E85 /* CreateNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteView.swift; sourceTree = "<group>"; };
 		305CE83C27A81D4900023E85 /* ColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerView.swift; sourceTree = "<group>"; };
 		305CE83F27A82D9700023E85 /* MyNotes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyNotes.xcdatamodel; sourceTree = "<group>"; };
-		305CE84127A82DFD00023E85 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		305CE84427A966A500023E85 /* Color+hexInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+hexInit.swift"; sourceTree = "<group>"; };
 		305CE84727A9737700023E85 /* UIColor+rgba.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+rgba.swift"; sourceTree = "<group>"; };
-		305CE84927A980DC00023E85 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		305CE84B27A9831B00023E85 /* NoteProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteProperties.swift; sourceTree = "<group>"; };
+		3073014427AC40E50040E082 /* UIColor+toHexString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+toHexString.swift"; sourceTree = "<group>"; };
+		3073014627AC41D00040E082 /* Date+fromString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+fromString.swift"; sourceTree = "<group>"; };
+		3073014827AC48CE0040E082 /* Note+viewModelLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+viewModelLogic.swift"; sourceTree = "<group>"; };
+		3073014A27AC52190040E082 /* PersistentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,8 +179,7 @@
 		305CE82327A5531700023E85 /* Business Logic Layer */ = {
 			isa = PBXGroup;
 			children = (
-				305CE84927A980DC00023E85 /* CoreDataService.swift */,
-				305CE84D27A9899B00023E85 /* View Models */,
+				3073014827AC48CE0040E082 /* Note+viewModelLogic.swift */,
 			);
 			path = "Business Logic Layer";
 			sourceTree = "<group>";
@@ -197,7 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				305CE83E27A82D9700023E85 /* MyNotes.xcdatamodeld */,
-				305CE84127A82DFD00023E85 /* DataController.swift */,
+				3073014A27AC52190040E082 /* PersistentController.swift */,
 			);
 			path = "Data Access Layer";
 			sourceTree = "<group>";
@@ -207,16 +208,10 @@
 			children = (
 				305CE84427A966A500023E85 /* Color+hexInit.swift */,
 				305CE84727A9737700023E85 /* UIColor+rgba.swift */,
+				3073014427AC40E50040E082 /* UIColor+toHexString.swift */,
+				3073014627AC41D00040E082 /* Date+fromString.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		305CE84D27A9899B00023E85 /* View Models */ = {
-			isa = PBXGroup;
-			children = (
-				305CE82427A5533100023E85 /* NoteViewModel.swift */,
-			);
-			path = "View Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -350,16 +345,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				305CE82A27A55C2700023E85 /* Constants.swift in Sources */,
-				305CE84227A82DFD00023E85 /* DataController.swift in Sources */,
-				305CE82527A5533100023E85 /* NoteViewModel.swift in Sources */,
 				305CE84C27A9831B00023E85 /* NoteProperties.swift in Sources */,
+				3073014727AC41D00040E082 /* Date+fromString.swift in Sources */,
 				305CE83627A579DD00023E85 /* CreateNoteView.swift in Sources */,
 				305CE83D27A81D4900023E85 /* ColorPickerView.swift in Sources */,
 				305CE84527A966A500023E85 /* Color+hexInit.swift in Sources */,
+				3073014527AC40E50040E082 /* UIColor+toHexString.swift in Sources */,
 				305CE84027A82D9700023E85 /* MyNotes.xcdatamodeld in Sources */,
+				3073014B27AC52190040E082 /* PersistentController.swift in Sources */,
 				305CE7F827A547C200023E85 /* NotesListView.swift in Sources */,
+				3073014927AC48CE0040E082 /* Note+viewModelLogic.swift in Sources */,
 				305CE7F627A547C200023E85 /* MyNotesApp.swift in Sources */,
-				305CE84A27A980DC00023E85 /* CoreDataService.swift in Sources */,
 				305CE83327A56D0300023E85 /* NoteEditingView.swift in Sources */,
 				305CE82227A54B8700023E85 /* NoteView.swift in Sources */,
 				305CE84827A9737700023E85 /* UIColor+rgba.swift in Sources */,

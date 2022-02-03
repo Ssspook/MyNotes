@@ -1,15 +1,22 @@
 import SwiftUI
+import CoreData
 
 struct NotesListView: View {
-    @StateObject private var coreDataService = CoreDataService()
+    @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest(fetchRequest: Note.fetch())
+    private var notes: FetchedResults<Note>
+
     
     var body: some View {
         NavigationView {
             List {
-                ForEach(coreDataService.notes) { note in
-                    NoteView(note: note, coreDataService)
+                ForEach(notes) { note in
+                    NoteView(note: note)
+                        .environmentObject(note)
                 }
-                .onDelete(perform: coreDataService.deleteNote)
+                .onDelete { indexSet in
+                    Note.delete(at: indexSet, for: Array(notes))
+                }
             }
             .navigationTitle(Text("Notes"))
             .toolbar {

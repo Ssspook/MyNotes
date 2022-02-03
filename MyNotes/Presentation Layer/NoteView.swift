@@ -1,33 +1,31 @@
 import SwiftUI
 
 struct NoteView: View {
-    @StateObject private var noteViewModel: NoteViewModel
-    private let coreDataService: CoreDataService
+    @State private var coreDataNote: Note
     
-    init(note: Note, _ coreDataServ: CoreDataService) {
-        _noteViewModel = StateObject(wrappedValue: initNoteViewModel(note: note))
-        coreDataService = coreDataServ
+    init(note: Note) {
+        _coreDataNote = State(wrappedValue: note)
     }
     
     var body: some View {
         VStack {
-            Text(noteViewModel.text)
+            Text(coreDataNote.noteText)
                 .multilineTextAlignment(.leading)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .lineLimit(Constants.lineLimit)
-                .foregroundColor(noteViewModel.foregroundColor)
+                .foregroundColor(coreDataNote.textColor)
             
             Divider().background(.black)
             
             HStack {
-                Text(noteViewModel.date)
-                    .foregroundColor(noteViewModel.foregroundColor)
+                Text(coreDataNote.dateString)
+                    .foregroundColor(coreDataNote.textColor)
                     .font(.system(size: Constants.dateFontSize))
                 
                 Spacer()
                 
                 NavigationLink {
-                    NoteEditingView(note: noteViewModel)
+                    NoteEditingView(note: coreDataNote)
                 } label: {
                     EmptyView()
                 }
@@ -37,22 +35,14 @@ struct NoteView: View {
             }
         }
         .padding()
-        .background(noteViewModel.noteBackgroundColor)
+        .background(coreDataNote.backgroundColor)
         .cornerRadius(Constants.cornerRadius)
             
-    }
-    
-    private func initNoteViewModel(note: Note) -> NoteViewModel {
-        let noteViewModel = NoteViewModel(noteText: note.noteText ?? "Empty note", date: note.date ?? Date())
-        noteViewModel.foregroundColor = Color(hex: note.textColorHex ?? Constants.whiteHex)
-        noteViewModel.noteBackgroundColor = Color(hex: note.backgroundColorHex ?? Constants.blackHex)
-        
-        return noteViewModel
     }
 }
 
 struct NoteView_Previews: PreviewProvider {
     static var previews: some View {
-        NoteView(noteVM: NoteViewModel(noteText: "sd", date: Date()))
+        NoteView(note: Note(context: PersistenceController.preview.container.viewContext))
     }
 }

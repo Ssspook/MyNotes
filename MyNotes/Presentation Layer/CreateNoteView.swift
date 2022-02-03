@@ -1,7 +1,6 @@
 import SwiftUI
 
 struct CreateNoteView: View {
-    @Environment(\.managedObjectContext) var moc
     @State private var noteText = ""
     @State private var noteBackgroundColor = Color.indigo
     @State private var noteTextColor = Color.white
@@ -19,7 +18,8 @@ struct CreateNoteView: View {
                     .onDisappear {
                         let currentDate = Date()
                         
-                        let note = Note(context: moc)
+                        let note = Note(context: PersistenceController.shared.container.viewContext)
+                        
                         saveToDataBase(note: note, currentDate: currentDate)
                     }
                 
@@ -42,22 +42,10 @@ struct CreateNoteView: View {
     private func saveToDataBase(note: Note, currentDate: Date) {
         note.noteText = placeholderIfNoteTextIsEmpty(noteText)
         note.date = currentDate
-        note.backgroundColorHex = getHexFromColor(color: noteBackgroundColor)
-        note.textColorHex = getHexFromColor(color: noteTextColor)
+        note.backgroundColorHex = UIColor(noteBackgroundColor).toHexString()
+        note.textColorHex = UIColor(noteTextColor).toHexString()
         
-        try? moc.save()
-    }
-    
-    private func getHexFromColor(color: Color) -> String {
-        let colorUiRepr = UIColor(color)
-        
-        let r = colorUiRepr.rgba.red
-        let g = colorUiRepr.rgba.green
-        let b = colorUiRepr.rgba.blue
-
-        let rgb = (Int)(r * 255)<<16 | (Int)(g * 255)<<8 | (Int)(b * 255)<<0
-        
-        return String(format: "#%06X", rgb)
+        PersistenceController.shared.save()
     }
     
     private func placeholderIfNoteTextIsEmpty(_ text: String) -> String {
