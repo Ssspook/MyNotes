@@ -81,7 +81,7 @@ extension Note {
         
         dateFormatter.timeZone = .current
         dateFormatter.locale = .current
-        dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:s"
+        dateFormatter.dateFormat = "dd/MM/yyyy HH:mm"
         
         return dateFormatter
     }
