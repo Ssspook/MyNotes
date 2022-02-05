@@ -64,6 +64,8 @@ extension Note {
         if let first = notes.first, let viewContext = first.managedObjectContext {
             offset.map { notes[$0] }.forEach(viewContext.delete)
         }
+        
+        PersistenceController.shared.save()
     }
     
     static func fetch() -> NSFetchRequest<Note> {

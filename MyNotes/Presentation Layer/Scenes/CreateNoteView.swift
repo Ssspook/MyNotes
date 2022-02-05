@@ -17,15 +17,13 @@ struct CreateNoteView: View {
                     .mask(RoundedRectangle(cornerRadius: Constants.cornerRadius))
                     .onDisappear {
                         let currentDate = Date()
-                        
-                        let note = Note(context: PersistenceController.shared.container.viewContext)
-                        
-                        saveToDataBase(note: note, currentDate: currentDate)
+
+                        saveNoteToDataBase(date: currentDate)
                     }
                 
                 ColorPickerView(color: $noteBackgroundColor, text: "Pick a note background color", width: getNoteWidth(geo: geometry))
                 
-                ColorPickerView(color: $noteTextColor, text: "Pich a note text color", width: getNoteWidth(geo: geometry))
+                ColorPickerView(color: $noteTextColor, text: "Pick a note text color", width: getNoteWidth(geo: geometry))
             }
             .frame(
                 width: geometry.size.width,
@@ -39,17 +37,19 @@ struct CreateNoteView: View {
         geo.size.width * Constants.noteCreationFieldScale
     }
     
-    private func saveToDataBase(note: Note, currentDate: Date) {
-        note.noteText = placeholderIfNoteTextIsEmpty(noteText)
-        note.date = currentDate
-        note.backgroundColorHex = UIColor(noteBackgroundColor).toHexString()
-        note.textColorHex = UIColor(noteTextColor).toHexString()
-        
-        PersistenceController.shared.save()
-    }
-    
     private func placeholderIfNoteTextIsEmpty(_ text: String) -> String {
         text.isEmpty ? "Empty note" : text
+    }
+    
+    private func saveNoteToDataBase(date: Date) {
+        let note = Note(context: PersistenceController.shared.container.viewContext)
+        
+        note.noteText = placeholderIfNoteTextIsEmpty(noteText)
+        note.textColorHex = UIColor(noteTextColor).toHexString()
+        note.backgroundColorHex = UIColor(noteBackgroundColor).toHexString()
+        note.date = date
+        
+        PersistenceController.shared.save()
     }
 }
 

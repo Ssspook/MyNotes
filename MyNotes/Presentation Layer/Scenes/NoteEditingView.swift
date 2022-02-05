@@ -1,20 +1,18 @@
 import SwiftUI
 
 struct NoteEditingView: View {
-    @State private var coreDataNote: Note
-    @EnvironmentObject var note: Note
+    @StateObject private var note: Note
     
-    init(note: Note) {
-        coreDataNote = note
+    init(_ note: Note) {
+        _note = StateObject(wrappedValue: note)
     }
     
     var body: some View {
-        
         GeometryReader { geometry in
             VStack {
-                TextEditor(text: $coreDataNote.noteText)
-                    .onChange(of: coreDataNote.noteText) { newText in
-                         coreDataNote.noteText = newText
+                TextEditor(text: $note.noteText)
+                    .onChange(of: note.noteText) { newText in
+                         note.noteText = newText
                     }
                     .padding()
                     .frame(width: getNoteWidth(geo: geometry))
@@ -22,9 +20,15 @@ struct NoteEditingView: View {
                     .overlay(RoundedRectangle(cornerRadius: Constants.cornerRadius).strokeBorder(.indigo))
                     .mask(RoundedRectangle(cornerRadius: Constants.cornerRadius))
                 
-                ColorPickerView(color: $coreDataNote.backgroundColor, text: "Pick a note background color", width: getNoteWidth(geo: geometry))
+                ColorPickerView(color: $note.backgroundColor, text: "Pick a note background color", width: getNoteWidth(geo: geometry))
                 
-                ColorPickerView(color: $coreDataNote.textColor, text: "Pich a note text color", width: getNoteWidth(geo: geometry))
+                ColorPickerView(color: $note.textColor, text: "Pich a note text color", width: getNoteWidth(geo: geometry))
+            }
+            .onDisappear {
+                if note.noteText.isEmpty {
+                    note.noteText = "Empty note"
+                }
+                PersistenceController.shared.save()
             }
             .frame(
                 width: geometry.size.width,
@@ -41,7 +45,7 @@ struct NoteEditingView: View {
 
 struct NoteEditingView_Previews: PreviewProvider {
     static var previews: some View {
-        NoteEditingView(note: Note(context: PersistenceController.preview.container.viewContext))
+        NoteEditingView(Note(context: PersistenceController.shared.container.viewContext))
                                  
     }
 }

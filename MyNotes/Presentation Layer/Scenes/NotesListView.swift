@@ -2,21 +2,22 @@ import SwiftUI
 import CoreData
 
 struct NotesListView: View {
-    @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(fetchRequest: Note.fetch())
     private var notes: FetchedResults<Note>
-
+    @State private var redraw = false
     
     var body: some View {
         NavigationView {
             List {
                 ForEach(notes) { note in
                     NoteView(note: note)
-                        .environmentObject(note)
                 }
                 .onDelete { indexSet in
                     Note.delete(at: indexSet, for: Array(notes))
                 }
+            }
+            .onAppear {
+                redraw.toggle()
             }
             .navigationTitle(Text("Notes"))
             .toolbar {

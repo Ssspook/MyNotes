@@ -2,16 +2,15 @@ import SwiftUI
 
 @main
 struct MyNotesApp: App {
-    private let persistenceController = PersistenceController.shared
-    @Environment(\.scenePhase) private var scenePhase
+    @Environment(\.scenePhase) var scenePhase
     
     var body: some Scene {
         WindowGroup {
             NotesListView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environment(\.managedObjectContext,  PersistenceController.shared.container.viewContext)
         }
-        .onChange(of: scenePhase) { _ in
-            persistenceController.save()
+        .onChange(of: scenePhase) { newValue in
+            PersistenceController.shared.save()
         }
     }
 }
